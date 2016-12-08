@@ -1,0 +1,167 @@
+\hypertarget{class_blob}{}\section{Blob Class Reference}
+\label{class_blob}\index{Blob@{Blob}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_blob_a6a0d29e3183e1458d1b9e6a5ca584826}{Blob} ()
+\item 
+void \hyperlink{class_blob_a8799d9f4067f8313a14abe6b6e95b94b}{copy} (\hyperlink{class_blob}{Blob} blob)
+\item 
+void \hyperlink{class_blob_a225d68a04864a856a1165e076df38492}{clear} ()
+\item 
+void \hyperlink{class_blob_a23782f7fe230bc94a2ddaf7e1a47035e}{add\+\_\+pixel} (\hyperlink{class_pixel}{Pixel})
+\item 
+bool \hyperlink{class_blob_aa5cd59a1f655612b00774c50a62227a2}{is\+\_\+active} ()
+\item 
+int \hyperlink{class_blob_a8305d9a0e1b4573e86347f669cb4a637}{get\+\_\+size} ()
+\item 
+void \hyperlink{class_blob_a6893c4a0491aa7978e82105cd9cd6b39}{set\+\_\+assigned} ()
+\item 
+void \hyperlink{class_blob_a5e11ee1b8ee8ee18dce8161e05576607}{clear\+\_\+assigned} ()
+\item 
+bool \hyperlink{class_blob_a7a8d479fca8f7f7ef1908e35911fc8ad}{is\+\_\+assigned} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_blob_a12342366f558050f8f19c0caaf83a49c}{min} \mbox{[}2\mbox{]}
+\item 
+int \hyperlink{class_blob_ac65f825c125a2d93eefae61b5602111d}{max} \mbox{[}2\mbox{]}
+\item 
+float \hyperlink{class_blob_a88923d04a5ddd83f95c4ce6dabc7e903}{centroid} \mbox{[}2\mbox{]}
+\item 
+float \hyperlink{class_blob_a636fb6a6b7ecefeedd3a3a0558d5091c}{aspect\+\_\+ratio}
+\item 
+float \hyperlink{class_blob_aed99c02ad613d5a723ebf926c357952d}{average\+\_\+temperature}
+\item 
+int \hyperlink{class_blob_af83c73533a368f2244c982af843f922a}{width}
+\item 
+int \hyperlink{class_blob_a799f7528e23e76180b4267fb0588a929}{height}
+\item 
+int \hyperlink{class_blob_a2970a2de48ad41c7ab03d7fad75d3250}{num\+\_\+pixels}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Blob@{Blob}!Blob@{Blob}}
+\index{Blob@{Blob}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{Blob()}{Blob()}}]{\setlength{\rightskip}{0pt plus 5cm}Blob\+::\+Blob (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_a6a0d29e3183e1458d1b9e6a5ca584826}{}\label{class_blob_a6a0d29e3183e1458d1b9e6a5ca584826}
+Create a new blob object. Blobs are clumps of adjacent pixels that are aggregated to have generalised characteristics. Blobs start off empty and inactive. Feed the blob pixels to make it grow.
+
+\subsection{Member Function Documentation}
+\index{Blob@{Blob}!add\+\_\+pixel@{add\+\_\+pixel}}
+\index{add\+\_\+pixel@{add\+\_\+pixel}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{add\+\_\+pixel(\+Pixel)}{add_pixel(Pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}void Blob\+::add\+\_\+pixel (
+\begin{DoxyParamCaption}
+\item[{{\bf Pixel}}]{pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_a23782f7fe230bc94a2ddaf7e1a47035e}{}\label{class_blob_a23782f7fe230bc94a2ddaf7e1a47035e}
+Add a new pixel to the blob The blob will need to recalculate its shape and other aspects 
+\begin{DoxyParams}{Parameters}
+{\em pixel} & \hyperlink{class_pixel}{Pixel} object to be added to the blob\\
+\hline
+\end{DoxyParams}
+AN\+: There are currently no mechanisms that prevent a pixel from being added multiple times.
+\begin{DoxyItemize}
+\item Probably not going to bother
+\item \hyperlink{class_pixel}{Pixel} objects are not actually stored. The blob just absorbs its information (as blobs do).
+\end{DoxyItemize}\index{Blob@{Blob}!clear@{clear}}
+\index{clear@{clear}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void Blob\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_a225d68a04864a856a1165e076df38492}{}\label{class_blob_a225d68a04864a856a1165e076df38492}
+Clear the blob configuration to set it back to blank.\index{Blob@{Blob}!clear\+\_\+assigned@{clear\+\_\+assigned}}
+\index{clear\+\_\+assigned@{clear\+\_\+assigned}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{clear\+\_\+assigned()}{clear_assigned()}}]{\setlength{\rightskip}{0pt plus 5cm}void Blob\+::clear\+\_\+assigned (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_a5e11ee1b8ee8ee18dce8161e05576607}{}\label{class_blob_a5e11ee1b8ee8ee18dce8161e05576607}
+Clear the state of the is\+\_\+assigned flag. This indicates the blob has not been assigned to a tracked blob. Blobs that have not been assigned need a new tracked blob to be created for them\index{Blob@{Blob}!copy@{copy}}
+\index{copy@{copy}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{copy(\+Blob blob)}{copy(Blob blob)}}]{\setlength{\rightskip}{0pt plus 5cm}void Blob\+::copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Blob}}]{blob}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_a8799d9f4067f8313a14abe6b6e95b94b}{}\label{class_blob_a8799d9f4067f8313a14abe6b6e95b94b}
+Copy the information of another blob. All previous information in the blob is overwritten. Useful for moving blobs around an array. 
+\begin{DoxyParams}{Parameters}
+{\em blob} & Source blob to copy information from.\\
+\hline
+\end{DoxyParams}
+\index{Blob@{Blob}!get\+\_\+size@{get\+\_\+size}}
+\index{get\+\_\+size@{get\+\_\+size}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{get\+\_\+size()}{get_size()}}]{\setlength{\rightskip}{0pt plus 5cm}int Blob\+::get\+\_\+size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_a8305d9a0e1b4573e86347f669cb4a637}{}\label{class_blob_a8305d9a0e1b4573e86347f669cb4a637}
+Get the number of pixels contained in the blob \begin{DoxyReturn}{Returns}
+Number of pixels the blob has absorbed
+\end{DoxyReturn}
+\index{Blob@{Blob}!is\+\_\+active@{is\+\_\+active}}
+\index{is\+\_\+active@{is\+\_\+active}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{is\+\_\+active()}{is_active()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Blob\+::is\+\_\+active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_aa5cd59a1f655612b00774c50a62227a2}{}\label{class_blob_aa5cd59a1f655612b00774c50a62227a2}
+Determine if the blob is actually being used. A blob must have at least one pixel to be considered active. \begin{DoxyReturn}{Returns}
+True if the blob contains at least one pixel.
+\end{DoxyReturn}
+\index{Blob@{Blob}!is\+\_\+assigned@{is\+\_\+assigned}}
+\index{is\+\_\+assigned@{is\+\_\+assigned}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{is\+\_\+assigned()}{is_assigned()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Blob\+::is\+\_\+assigned (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_a7a8d479fca8f7f7ef1908e35911fc8ad}{}\label{class_blob_a7a8d479fca8f7f7ef1908e35911fc8ad}
+Determine if the blob has been assigned to a tracked blob. \begin{DoxyReturn}{Returns}
+True if the blob has been assigned.
+\end{DoxyReturn}
+\index{Blob@{Blob}!set\+\_\+assigned@{set\+\_\+assigned}}
+\index{set\+\_\+assigned@{set\+\_\+assigned}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{set\+\_\+assigned()}{set_assigned()}}]{\setlength{\rightskip}{0pt plus 5cm}void Blob\+::set\+\_\+assigned (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_blob_a6893c4a0491aa7978e82105cd9cd6b39}{}\label{class_blob_a6893c4a0491aa7978e82105cd9cd6b39}
+Set the assigned flag, which indicates the blob has been assigned to a tracked blob object
+
+\subsection{Member Data Documentation}
+\index{Blob@{Blob}!aspect\+\_\+ratio@{aspect\+\_\+ratio}}
+\index{aspect\+\_\+ratio@{aspect\+\_\+ratio}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{aspect\+\_\+ratio}{aspect_ratio}}]{\setlength{\rightskip}{0pt plus 5cm}float Blob\+::aspect\+\_\+ratio}\hypertarget{class_blob_a636fb6a6b7ecefeedd3a3a0558d5091c}{}\label{class_blob_a636fb6a6b7ecefeedd3a3a0558d5091c}
+Ratio of the blobs width to its height \index{Blob@{Blob}!average\+\_\+temperature@{average\+\_\+temperature}}
+\index{average\+\_\+temperature@{average\+\_\+temperature}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{average\+\_\+temperature}{average_temperature}}]{\setlength{\rightskip}{0pt plus 5cm}float Blob\+::average\+\_\+temperature}\hypertarget{class_blob_aed99c02ad613d5a723ebf926c357952d}{}\label{class_blob_aed99c02ad613d5a723ebf926c357952d}
+Average temperature of the pixels in the blob \index{Blob@{Blob}!centroid@{centroid}}
+\index{centroid@{centroid}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{centroid}{centroid}}]{\setlength{\rightskip}{0pt plus 5cm}float Blob\+::centroid\mbox{[}2\mbox{]}}\hypertarget{class_blob_a88923d04a5ddd83f95c4ce6dabc7e903}{}\label{class_blob_a88923d04a5ddd83f95c4ce6dabc7e903}
+The centroid location of the blob \index{Blob@{Blob}!height@{height}}
+\index{height@{height}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{height}{height}}]{\setlength{\rightskip}{0pt plus 5cm}int Blob\+::height}\hypertarget{class_blob_a799f7528e23e76180b4267fb0588a929}{}\label{class_blob_a799f7528e23e76180b4267fb0588a929}
+Maximum height of the blob in pixels \index{Blob@{Blob}!max@{max}}
+\index{max@{max}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{max}{max}}]{\setlength{\rightskip}{0pt plus 5cm}int Blob\+::max\mbox{[}2\mbox{]}}\hypertarget{class_blob_ac65f825c125a2d93eefae61b5602111d}{}\label{class_blob_ac65f825c125a2d93eefae61b5602111d}
+The maximum bounds for the blob \index{Blob@{Blob}!min@{min}}
+\index{min@{min}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{min}{min}}]{\setlength{\rightskip}{0pt plus 5cm}int Blob\+::min\mbox{[}2\mbox{]}}\hypertarget{class_blob_a12342366f558050f8f19c0caaf83a49c}{}\label{class_blob_a12342366f558050f8f19c0caaf83a49c}
+The minimum bounds for the blob \index{Blob@{Blob}!num\+\_\+pixels@{num\+\_\+pixels}}
+\index{num\+\_\+pixels@{num\+\_\+pixels}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{num\+\_\+pixels}{num_pixels}}]{\setlength{\rightskip}{0pt plus 5cm}int Blob\+::num\+\_\+pixels}\hypertarget{class_blob_a2970a2de48ad41c7ab03d7fad75d3250}{}\label{class_blob_a2970a2de48ad41c7ab03d7fad75d3250}
+Number of pixels contained in the blob \index{Blob@{Blob}!width@{width}}
+\index{width@{width}!Blob@{Blob}}
+\subsubsection[{\texorpdfstring{width}{width}}]{\setlength{\rightskip}{0pt plus 5cm}int Blob\+::width}\hypertarget{class_blob_af83c73533a368f2244c982af843f922a}{}\label{class_blob_af83c73533a368f2244c982af843f922a}
+Maximum width of the blob in pixels 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Blob.\+h\item 
+Blob.\+cpp\end{DoxyCompactItemize}

@@ -34,7 +34,7 @@ void TrackedBlob::clear(){
     _predicted_position[Y] = -1;
     _travel[X] = 0;
     _travel[Y] = 0;
-    _has_updated = false;
+    reset_updated_status();
 }
 
 void TrackedBlob::set(Blob blob){
@@ -79,7 +79,6 @@ void TrackedBlob::update_blob(Blob blob){
         _has_updated = true;
 }
 
-
 bool TrackedBlob::has_updated(){
     /**
     * Find out if the tracked blob has updated
@@ -108,8 +107,8 @@ void TrackedBlob::copy(TrackedBlob tblob){
     _predicted_position[X] = tblob._predicted_position[X];
     _predicted_position[Y] = tblob._predicted_position[Y];
     _travel[Y] = tblob._travel[Y];
-
     _travel[X] = tblob._travel[X];
+    _has_updated = tblob.has_updated();
 }
 
 float TrackedBlob::get_travel(int axis){

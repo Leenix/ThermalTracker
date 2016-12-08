@@ -28,6 +28,9 @@ void Blob::clear(){
     aspect_ratio = 0;
     total_x = 0;
     total_y = 0;
+    centroid[X] = -1;
+    centroid[Y] = -1;
+
     clear_assigned();
 }
 

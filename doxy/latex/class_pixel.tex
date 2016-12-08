@@ -1,0 +1,125 @@
+\hypertarget{class_pixel}{}\section{Pixel Class Reference}
+\label{class_pixel}\index{Pixel@{Pixel}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pixel_a27ad99a2f705e635c42d242d530d4756}{Pixel} ()
+\item 
+\hyperlink{class_pixel_aaf874f68b03aa45329ccc9f42ddf9bb3}{Pixel} (int x, int y, float temperature)
+\item 
+void \hyperlink{class_pixel_ab708f8bb5c3137a9851c6a0e44c7b1de}{set} (int x, int y, float temperature)
+\item 
+bool \hyperlink{class_pixel_abb8ecbb4c9499deb6986c3ff5b04de91}{is\+\_\+adjacent} (\hyperlink{class_pixel}{Pixel})
+\item 
+int \hyperlink{class_pixel_ad0c59affd33373000b06ac1b590a07fa}{get\+\_\+x} ()
+\item 
+int \hyperlink{class_pixel_aba31da4206ce80d5b5c4e19ca9ce4b82}{get\+\_\+y} ()
+\item 
+float \hyperlink{class_pixel_aaffdcbd7215e25adfaae6afd37784e35}{get\+\_\+temperature} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\subsubsection[{\texorpdfstring{Pixel()}{Pixel()}}]{\setlength{\rightskip}{0pt plus 5cm}Pixel\+::\+Pixel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pixel_a27ad99a2f705e635c42d242d530d4756}{}\label{class_pixel_a27ad99a2f705e635c42d242d530d4756}
+Create an empty pixel object \hyperlink{class_pixel}{Pixel} values need to be set using the set method rather than on construction It\textquotesingle{}s a lot easier to use a null constructor for lists and junk, trust me...\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\index{Pixel@{Pixel}!Pixel@{Pixel}}
+\subsubsection[{\texorpdfstring{Pixel(int x, int y, float temperature)}{Pixel(int x, int y, float temperature)}}]{\setlength{\rightskip}{0pt plus 5cm}Pixel\+::\+Pixel (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{float}]{temperature}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pixel_aaf874f68b03aa45329ccc9f42ddf9bb3}{}\label{class_pixel_aaf874f68b03aa45329ccc9f42ddf9bb3}
+Create a pixel object 
+\begin{DoxyParams}{Parameters}
+{\em x} & The column location of the pixel (should be positive) \\
+\hline
+{\em y} & The row location of the pixel (should be positive) \\
+\hline
+{\em temperature} & Recorded temperature of the pixel (in °C)\\
+\hline
+\end{DoxyParams}
+AN\+: The temperature field could probably be changed to a standard value field for use with normal camera pixels
+\begin{DoxyItemize}
+\item (As long as they\textquotesingle{}re greyscale)
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\index{Pixel@{Pixel}!get\+\_\+temperature@{get\+\_\+temperature}}
+\index{get\+\_\+temperature@{get\+\_\+temperature}!Pixel@{Pixel}}
+\subsubsection[{\texorpdfstring{get\+\_\+temperature()}{get_temperature()}}]{\setlength{\rightskip}{0pt plus 5cm}float Pixel\+::get\+\_\+temperature (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pixel_aaffdcbd7215e25adfaae6afd37784e35}{}\label{class_pixel_aaffdcbd7215e25adfaae6afd37784e35}
+Get the recorded temperature of the pixel \begin{DoxyReturn}{Returns}
+\hyperlink{class_pixel}{Pixel} temperature in deg C
+\end{DoxyReturn}
+\index{Pixel@{Pixel}!get\+\_\+x@{get\+\_\+x}}
+\index{get\+\_\+x@{get\+\_\+x}!Pixel@{Pixel}}
+\subsubsection[{\texorpdfstring{get\+\_\+x()}{get_x()}}]{\setlength{\rightskip}{0pt plus 5cm}int Pixel\+::get\+\_\+x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pixel_ad0c59affd33373000b06ac1b590a07fa}{}\label{class_pixel_ad0c59affd33373000b06ac1b590a07fa}
+Get the column location of the pixel \begin{DoxyReturn}{Returns}
+Column location of the pixel (should be positive)
+\end{DoxyReturn}
+\index{Pixel@{Pixel}!get\+\_\+y@{get\+\_\+y}}
+\index{get\+\_\+y@{get\+\_\+y}!Pixel@{Pixel}}
+\subsubsection[{\texorpdfstring{get\+\_\+y()}{get_y()}}]{\setlength{\rightskip}{0pt plus 5cm}int Pixel\+::get\+\_\+y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pixel_aba31da4206ce80d5b5c4e19ca9ce4b82}{}\label{class_pixel_aba31da4206ce80d5b5c4e19ca9ce4b82}
+Get the row location of the pixel \begin{DoxyReturn}{Returns}
+Row location of the pixel (should be positive)
+\end{DoxyReturn}
+\index{Pixel@{Pixel}!is\+\_\+adjacent@{is\+\_\+adjacent}}
+\index{is\+\_\+adjacent@{is\+\_\+adjacent}!Pixel@{Pixel}}
+\subsubsection[{\texorpdfstring{is\+\_\+adjacent(\+Pixel)}{is_adjacent(Pixel)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Pixel\+::is\+\_\+adjacent (
+\begin{DoxyParamCaption}
+\item[{{\bf Pixel}}]{other\+\_\+pixel}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pixel_abb8ecbb4c9499deb6986c3ff5b04de91}{}\label{class_pixel_abb8ecbb4c9499deb6986c3ff5b04de91}
+Check if the pixel is adjacent to another pixel. Diagonal adjacency also counts in this case 
+\begin{DoxyParams}{Parameters}
+{\em other\+\_\+pixel} & A second pixel to test adjacency against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the other\+\_\+pixel is in the surrounding 8 adjacent pixel locations. False if not adjacent. AN\+: Pixels are not adjacent if they occupy the same location.
+\end{DoxyReturn}
+\index{Pixel@{Pixel}!set@{set}}
+\index{set@{set}!Pixel@{Pixel}}
+\subsubsection[{\texorpdfstring{set(int x, int y, float temperature)}{set(int x, int y, float temperature)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pixel\+::set (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{float}]{temperature}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pixel_ab708f8bb5c3137a9851c6a0e44c7b1de}{}\label{class_pixel_ab708f8bb5c3137a9851c6a0e44c7b1de}
+Set the pixels\textquotesingle{} values 
+\begin{DoxyParams}{Parameters}
+{\em x} & The column location of the pixel (should be positive) \\
+\hline
+{\em y} & The row location of the pixel (should be positive) \\
+\hline
+{\em temperature} & Recorded temperature of the pixel (in °C)\\
+\hline
+\end{DoxyParams}
+AN\+: The temperature field could probably be changed to a standard value field for use with normal camera pixels
+\begin{DoxyItemize}
+\item (As long as they\textquotesingle{}re greyscale)
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Pixel.\+h\item 
+Pixel.\+cpp\end{DoxyCompactItemize}

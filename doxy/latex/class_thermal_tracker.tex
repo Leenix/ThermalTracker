@@ -1,0 +1,121 @@
+\hypertarget{class_thermal_tracker}{}\section{Thermal\+Tracker Class Reference}
+\label{class_thermal_tracker}\index{Thermal\+Tracker@{Thermal\+Tracker}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thermal_tracker_a1caadec6f2b7dadb9fbc2d046fed7667}{Thermal\+Tracker} (int \+\_\+running\+\_\+average\+\_\+size=R\+U\+N\+N\+I\+N\+G\+\_\+\+A\+V\+E\+R\+A\+G\+E\+\_\+\+S\+I\+ZE, int \+\_\+max\+\_\+distance\+\_\+threshold=M\+A\+X\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+LD, int \+\_\+min\+\_\+blob\+\_\+size=M\+I\+N\+I\+M\+U\+M\+\_\+\+B\+L\+O\+B\+\_\+\+S\+I\+ZE)
+\item 
+void \hyperlink{class_thermal_tracker_add0c0369028bfde64e78789d856eeb57}{reset\+\_\+background} ()
+\item 
+void \hyperlink{class_thermal_tracker_a73f27eacc99d28db31cab4c7907cf405}{process\+\_\+frame} (float frame\+\_\+buffer\mbox{[}F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+HT\mbox{]}\mbox{[}F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+TH\mbox{]})
+\item 
+bool \hyperlink{class_thermal_tracker_a8dcae63fef65e199b7ab8afe51bee042}{finished\+\_\+building\+\_\+background} ()
+\item 
+void \hyperlink{class_thermal_tracker_ac5c7ede96cdd61b65e5c88fb65e6a868}{get\+\_\+averages} (float frame\+\_\+buffer\mbox{[}F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+HT\mbox{]}\mbox{[}F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+TH\mbox{]})
+\item 
+void \hyperlink{class_thermal_tracker_abba086bc340c336c7e6a14b91ec00ad8}{get\+\_\+variances} (float frame\+\_\+buffer\mbox{[}F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+HT\mbox{]}\mbox{[}F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+TH\mbox{]})
+\item 
+bool \hyperlink{class_thermal_tracker_ad7cdc3745f2ce5239bb1b7de05f5b711}{has\+\_\+new\+\_\+movements} ()
+\item 
+int \hyperlink{class_thermal_tracker_aa310ec8521478b8f1f1685ce222140e1}{get\+\_\+num\+\_\+last\+\_\+blobs} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Thermal\+Tracker@{Thermal\+Tracker}!Thermal\+Tracker@{Thermal\+Tracker}}
+\index{Thermal\+Tracker@{Thermal\+Tracker}!Thermal\+Tracker@{Thermal\+Tracker}}
+\subsubsection[{\texorpdfstring{Thermal\+Tracker(int \+\_\+running\+\_\+average\+\_\+size=\+R\+U\+N\+N\+I\+N\+G\+\_\+\+A\+V\+E\+R\+A\+G\+E\+\_\+\+S\+I\+Z\+E, int \+\_\+max\+\_\+distance\+\_\+threshold=\+M\+A\+X\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D, int \+\_\+min\+\_\+blob\+\_\+size=\+M\+I\+N\+I\+M\+U\+M\+\_\+\+B\+L\+O\+B\+\_\+\+S\+I\+Z\+E)}{ThermalTracker(int _running_average_size=RUNNING_AVERAGE_SIZE, int _max_distance_threshold=MAX_DISTANCE_THRESHOLD, int _min_blob_size=MINIMUM_BLOB_SIZE)}}]{\setlength{\rightskip}{0pt plus 5cm}Thermal\+Tracker\+::\+Thermal\+Tracker (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+running\+\_\+average\+\_\+size = {\ttfamily RUNNING\+\_\+AVERAGE\+\_\+SIZE}, }
+\item[{int}]{\+\_\+max\+\_\+distance\+\_\+threshold = {\ttfamily MAX\+\_\+DISTANCE\+\_\+THRESHOLD}, }
+\item[{int}]{\+\_\+min\+\_\+blob\+\_\+size = {\ttfamily MINIMUM\+\_\+BLOB\+\_\+SIZE}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_thermal_tracker_a1caadec6f2b7dadb9fbc2d046fed7667}{}\label{class_thermal_tracker_a1caadec6f2b7dadb9fbc2d046fed7667}
+Constructor -\/ Make a new thermal tracker object The thermal tracker uses a M\+L\+X90621 thermopile array to observe moving objects in its view. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+running\+\_\+average\+\_\+size} & The number of frames to include as the running background average in calculations \\
+\hline
+{\em \+\_\+max\+\_\+distance\+\_\+threshold} & The maximum amount of difference between blobs before they are considered different objects between frames \\
+\hline
+{\em \+\_\+min\+\_\+blob\+\_\+size} & The minimum pixel area that an object can occupy before it is tracked\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Thermal\+Tracker@{Thermal\+Tracker}!finished\+\_\+building\+\_\+background@{finished\+\_\+building\+\_\+background}}
+\index{finished\+\_\+building\+\_\+background@{finished\+\_\+building\+\_\+background}!Thermal\+Tracker@{Thermal\+Tracker}}
+\subsubsection[{\texorpdfstring{finished\+\_\+building\+\_\+background()}{finished_building_background()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Thermal\+Tracker\+::finished\+\_\+building\+\_\+background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_thermal_tracker_a8dcae63fef65e199b7ab8afe51bee042}{}\label{class_thermal_tracker_a8dcae63fef65e199b7ab8afe51bee042}
+Determine if the tracker has finished build its background frames. \begin{DoxyReturn}{Returns}
+True if the tracker has gathered the minumum number of frames.
+\end{DoxyReturn}
+\index{Thermal\+Tracker@{Thermal\+Tracker}!get\+\_\+averages@{get\+\_\+averages}}
+\index{get\+\_\+averages@{get\+\_\+averages}!Thermal\+Tracker@{Thermal\+Tracker}}
+\subsubsection[{\texorpdfstring{get\+\_\+averages(float frame\+\_\+buffer[F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+HT][F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+TH])}{get_averages(float frame_buffer[FRAME_HEIGHT][FRAME_WIDTH])}}]{\setlength{\rightskip}{0pt plus 5cm}void Thermal\+Tracker\+::get\+\_\+averages (
+\begin{DoxyParamCaption}
+\item[{float}]{frame\+\_\+buffer\mbox{[}\+F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T\mbox{]}\mbox{[}\+F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_thermal_tracker_ac5c7ede96cdd61b65e5c88fb65e6a868}{}\label{class_thermal_tracker_ac5c7ede96cdd61b65e5c88fb65e6a868}
+Get the average temperatures of the background pixels. 
+\begin{DoxyParams}{Parameters}
+{\em frame\+\_\+buffer} & A 2D array to pass the averages into. Averages in deg C\\
+\hline
+\end{DoxyParams}
+\index{Thermal\+Tracker@{Thermal\+Tracker}!get\+\_\+num\+\_\+last\+\_\+blobs@{get\+\_\+num\+\_\+last\+\_\+blobs}}
+\index{get\+\_\+num\+\_\+last\+\_\+blobs@{get\+\_\+num\+\_\+last\+\_\+blobs}!Thermal\+Tracker@{Thermal\+Tracker}}
+\subsubsection[{\texorpdfstring{get\+\_\+num\+\_\+last\+\_\+blobs()}{get_num_last_blobs()}}]{\setlength{\rightskip}{0pt plus 5cm}int Thermal\+Tracker\+::get\+\_\+num\+\_\+last\+\_\+blobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_thermal_tracker_aa310ec8521478b8f1f1685ce222140e1}{}\label{class_thermal_tracker_aa310ec8521478b8f1f1685ce222140e1}
+Get the number of blobs that were in the last processed frame. Small blobs below the threshold are cut from the blob numbers.\index{Thermal\+Tracker@{Thermal\+Tracker}!get\+\_\+variances@{get\+\_\+variances}}
+\index{get\+\_\+variances@{get\+\_\+variances}!Thermal\+Tracker@{Thermal\+Tracker}}
+\subsubsection[{\texorpdfstring{get\+\_\+variances(float frame\+\_\+buffer[F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+HT][F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+TH])}{get_variances(float frame_buffer[FRAME_HEIGHT][FRAME_WIDTH])}}]{\setlength{\rightskip}{0pt plus 5cm}void Thermal\+Tracker\+::get\+\_\+variances (
+\begin{DoxyParamCaption}
+\item[{float}]{frame\+\_\+buffer\mbox{[}\+F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T\mbox{]}\mbox{[}\+F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_thermal_tracker_abba086bc340c336c7e6a14b91ec00ad8}{}\label{class_thermal_tracker_abba086bc340c336c7e6a14b91ec00ad8}
+Get the temperature variances of the background pixels. 
+\begin{DoxyParams}{Parameters}
+{\em frame\+\_\+buffer} & A 2D array to pass the variances into. Variances in deg C.\\
+\hline
+\end{DoxyParams}
+\index{Thermal\+Tracker@{Thermal\+Tracker}!has\+\_\+new\+\_\+movements@{has\+\_\+new\+\_\+movements}}
+\index{has\+\_\+new\+\_\+movements@{has\+\_\+new\+\_\+movements}!Thermal\+Tracker@{Thermal\+Tracker}}
+\subsubsection[{\texorpdfstring{has\+\_\+new\+\_\+movements()}{has_new_movements()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Thermal\+Tracker\+::has\+\_\+new\+\_\+movements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_thermal_tracker_ad7cdc3745f2ce5239bb1b7de05f5b711}{}\label{class_thermal_tracker_ad7cdc3745f2ce5239bb1b7de05f5b711}
+Determine if there have been any new movements since the last check. Grabbing the movements will clear the flag \begin{DoxyReturn}{Returns}
+True if there have been any new movements
+\end{DoxyReturn}
+\index{Thermal\+Tracker@{Thermal\+Tracker}!process\+\_\+frame@{process\+\_\+frame}}
+\index{process\+\_\+frame@{process\+\_\+frame}!Thermal\+Tracker@{Thermal\+Tracker}}
+\subsubsection[{\texorpdfstring{process\+\_\+frame(float frame\+\_\+buffer[F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+HT][F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+TH])}{process_frame(float frame_buffer[FRAME_HEIGHT][FRAME_WIDTH])}}]{\setlength{\rightskip}{0pt plus 5cm}void Thermal\+Tracker\+::process\+\_\+frame (
+\begin{DoxyParamCaption}
+\item[{float}]{frame\+\_\+buffer\mbox{[}\+F\+R\+A\+M\+E\+\_\+\+H\+E\+I\+G\+H\+T\mbox{]}\mbox{[}\+F\+R\+A\+M\+E\+\_\+\+W\+I\+D\+T\+H\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_thermal_tracker_a73f27eacc99d28db31cab4c7907cf405}{}\label{class_thermal_tracker_a73f27eacc99d28db31cab4c7907cf405}
+Process an input thermal frame. If a background has not yet been established, the frame goes directly to the background without tracking. If the background has already been built, then the frame is analysed to detect and track movement. 
+\begin{DoxyParams}{Parameters}
+{\em frame\+\_\+buffer} & A 2D array containing the pixel temperatures from the thermopile sensor.\\
+\hline
+\end{DoxyParams}
+\index{Thermal\+Tracker@{Thermal\+Tracker}!reset\+\_\+background@{reset\+\_\+background}}
+\index{reset\+\_\+background@{reset\+\_\+background}!Thermal\+Tracker@{Thermal\+Tracker}}
+\subsubsection[{\texorpdfstring{reset\+\_\+background()}{reset_background()}}]{\setlength{\rightskip}{0pt plus 5cm}void Thermal\+Tracker\+::reset\+\_\+background (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_thermal_tracker_add0c0369028bfde64e78789d856eeb57}{}\label{class_thermal_tracker_add0c0369028bfde64e78789d856eeb57}
+Reset the number of frames in the running background, forcing the tracker to recreate.
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Thermal\+Tracker.\+h\item 
+Thermal\+Tracker.\+cpp\end{DoxyCompactItemize}

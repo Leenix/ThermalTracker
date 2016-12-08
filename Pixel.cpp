@@ -85,7 +85,7 @@ bool Pixel::is_adjacent(Pixel other_pixel){
         if (other_pixel.get_y() >= 0){
 
             // The two pixels are not adjacent if they occupy the same location
-            if (other_pixel.get_x() != get_x() && other_pixel.get_y() != get_y()) {
+            if (other_pixel.get_x() != get_x() || other_pixel.get_y() != get_y()) {
 
                 // Pixel must be in one of the 8 surrounding pixels
                 if (abs(_x - other_pixel.get_x()) <= 1){

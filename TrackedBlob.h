@@ -1,5 +1,5 @@
-#ifndef TRACKED_BLOB_H
-#define TRACKED_BLOB_H
+// #ifndef TRACKED_BLOB_H
+// #define TRACKED_BLOB_H
 
 #include "Pixel.h"
 #include "Blob.h"
@@ -32,9 +32,8 @@ private:
     Blob _blob;
     float _predicted_position[2];
     float _travel[2];
-
     bool _has_updated;
 };
 
 
-#endif
+// #endif

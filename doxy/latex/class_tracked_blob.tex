@@ -1,0 +1,144 @@
+\hypertarget{class_tracked_blob}{}\section{Tracked\+Blob Class Reference}
+\label{class_tracked_blob}\index{Tracked\+Blob@{Tracked\+Blob}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tracked_blob_a0c3225c74b0787997229cb5371be14c1}{Tracked\+Blob} ()
+\item 
+void \hyperlink{class_tracked_blob_a660f2172406975507543a8c40dc15a31}{clear} ()
+\item 
+void \hyperlink{class_tracked_blob_ad72721683571d4695c07141ec4acfc45}{set} (\hyperlink{class_blob}{Blob})
+\item 
+void \hyperlink{class_tracked_blob_a2159fb2f31b83d037c3fd7db3b3615e0}{update\+\_\+blob} (\hyperlink{class_blob}{Blob} blob)
+\item 
+float \hyperlink{class_tracked_blob_af8b850c3adbbe278ecaa55e47b2649b5}{get\+\_\+travel} (int axis)
+\item 
+void \hyperlink{class_tracked_blob_a33af8ed4a4c627453a7e8ad4e9441f3c}{reset\+\_\+updated\+\_\+status} ()
+\item 
+bool \hyperlink{class_tracked_blob_a3a1633adfd9f6ddac2f33159d068fe66}{is\+\_\+active} ()
+\item 
+bool \hyperlink{class_tracked_blob_a005c482d00c063ecd4d9fe61e8aeb71c}{has\+\_\+updated} ()
+\item 
+float \hyperlink{class_tracked_blob_afd0a987ed7ab199de3a9e2952d252e98}{get\+\_\+distance} (\hyperlink{class_blob}{Blob} other\+\_\+blob)
+\item 
+void \hyperlink{class_tracked_blob_a2865a723cb446876cb794cd9858f3da0}{copy} (\hyperlink{class_tracked_blob}{Tracked\+Blob} tblob)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tracked\+Blob@{Tracked\+Blob}!Tracked\+Blob@{Tracked\+Blob}}
+\index{Tracked\+Blob@{Tracked\+Blob}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{Tracked\+Blob()}{TrackedBlob()}}]{\setlength{\rightskip}{0pt plus 5cm}Tracked\+Blob\+::\+Tracked\+Blob (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_a0c3225c74b0787997229cb5371be14c1}{}\label{class_tracked_blob_a0c3225c74b0787997229cb5371be14c1}
+Create a new tracked blob. Track blobs start off empty until they are initialised by a regular blob using the set method. After that, you can update the blob that is being tracked to record its movements between frames (and thus updates)
+
+\subsection{Member Function Documentation}
+\index{Tracked\+Blob@{Tracked\+Blob}!clear@{clear}}
+\index{clear@{clear}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tracked\+Blob\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_a660f2172406975507543a8c40dc15a31}{}\label{class_tracked_blob_a660f2172406975507543a8c40dc15a31}
+Clear the tracked blob\textquotesingle{}s characteristics The tracked blob object will be marked inactive until the blob is reinitialised. Tracking information is also lost by this action.\index{Tracked\+Blob@{Tracked\+Blob}!copy@{copy}}
+\index{copy@{copy}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{copy(\+Tracked\+Blob tblob)}{copy(TrackedBlob tblob)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tracked\+Blob\+::copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Tracked\+Blob}}]{tblob}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_a2865a723cb446876cb794cd9858f3da0}{}\label{class_tracked_blob_a2865a723cb446876cb794cd9858f3da0}
+Overwrite the tracked blob with the information from another tracked blob. Useful for shuffling tracked blobs around in arrays Information from the source blob completely overwrites any currently-\/held information 
+\begin{DoxyParams}{Parameters}
+{\em tblob} & Tracked blob to copy information from\\
+\hline
+\end{DoxyParams}
+\index{Tracked\+Blob@{Tracked\+Blob}!get\+\_\+distance@{get\+\_\+distance}}
+\index{get\+\_\+distance@{get\+\_\+distance}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{get\+\_\+distance(\+Blob other\+\_\+blob)}{get_distance(Blob other_blob)}}]{\setlength{\rightskip}{0pt plus 5cm}float Tracked\+Blob\+::get\+\_\+distance (
+\begin{DoxyParamCaption}
+\item[{{\bf Blob}}]{other\+\_\+blob}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_afd0a987ed7ab199de3a9e2952d252e98}{}\label{class_tracked_blob_afd0a987ed7ab199de3a9e2952d252e98}
+Find out how \textquotesingle{}different\textquotesingle{} the tracked blob is from another blob; not just how far away the blob is... A low distance score between blobs means they are very similar This function is used on blobs between frames to determine if the blobs originate from the same object 
+\begin{DoxyParams}{Parameters}
+{\em other\+\_\+blob} & The second blob in the calculations. The distance factor will be between this blob and the tracked blob. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance score between the two blobs. Unitless.
+\end{DoxyReturn}
+\index{Tracked\+Blob@{Tracked\+Blob}!get\+\_\+travel@{get\+\_\+travel}}
+\index{get\+\_\+travel@{get\+\_\+travel}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{get\+\_\+travel(int axis)}{get_travel(int axis)}}]{\setlength{\rightskip}{0pt plus 5cm}float Tracked\+Blob\+::get\+\_\+travel (
+\begin{DoxyParamCaption}
+\item[{int}]{axis}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_af8b850c3adbbe278ecaa55e47b2649b5}{}\label{class_tracked_blob_af8b850c3adbbe278ecaa55e47b2649b5}
+Get the net travel distance of the tracked blob as it moves between frames 
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis of travel to get the distance for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The net number of pixels the blob has moved from its original position in the specified axis
+\end{DoxyReturn}
+\index{Tracked\+Blob@{Tracked\+Blob}!has\+\_\+updated@{has\+\_\+updated}}
+\index{has\+\_\+updated@{has\+\_\+updated}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{has\+\_\+updated()}{has_updated()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Tracked\+Blob\+::has\+\_\+updated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_a005c482d00c063ecd4d9fe61e8aeb71c}{}\label{class_tracked_blob_a005c482d00c063ecd4d9fe61e8aeb71c}
+Find out if the tracked blob has updated \begin{DoxyReturn}{Returns}
+True if the tracked blob has updated
+\end{DoxyReturn}
+\index{Tracked\+Blob@{Tracked\+Blob}!is\+\_\+active@{is\+\_\+active}}
+\index{is\+\_\+active@{is\+\_\+active}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{is\+\_\+active()}{is_active()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Tracked\+Blob\+::is\+\_\+active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_a3a1633adfd9f6ddac2f33159d068fe66}{}\label{class_tracked_blob_a3a1633adfd9f6ddac2f33159d068fe66}
+Determine if the tracked blob is actually tracking anything \begin{DoxyReturn}{Returns}
+True if a blob is being tracked
+\end{DoxyReturn}
+\index{Tracked\+Blob@{Tracked\+Blob}!reset\+\_\+updated\+\_\+status@{reset\+\_\+updated\+\_\+status}}
+\index{reset\+\_\+updated\+\_\+status@{reset\+\_\+updated\+\_\+status}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{reset\+\_\+updated\+\_\+status()}{reset_updated_status()}}]{\setlength{\rightskip}{0pt plus 5cm}void Tracked\+Blob\+::reset\+\_\+updated\+\_\+status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_a33af8ed4a4c627453a7e8ad4e9441f3c}{}\label{class_tracked_blob_a33af8ed4a4c627453a7e8ad4e9441f3c}
+Reset the updated status of the tracked blob. Tracked blobs that have not updated will be purged at the end of frame processing.\index{Tracked\+Blob@{Tracked\+Blob}!set@{set}}
+\index{set@{set}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{set(\+Blob)}{set(Blob)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tracked\+Blob\+::set (
+\begin{DoxyParamCaption}
+\item[{{\bf Blob}}]{blob}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_ad72721683571d4695c07141ec4acfc45}{}\label{class_tracked_blob_ad72721683571d4695c07141ec4acfc45}
+Start tracking a new blob. All previous tracking data (if any existed) is lost by this action. 
+\begin{DoxyParams}{Parameters}
+{\em blob} & \hyperlink{class_blob}{Blob} to start tracking\\
+\hline
+\end{DoxyParams}
+\index{Tracked\+Blob@{Tracked\+Blob}!update\+\_\+blob@{update\+\_\+blob}}
+\index{update\+\_\+blob@{update\+\_\+blob}!Tracked\+Blob@{Tracked\+Blob}}
+\subsubsection[{\texorpdfstring{update\+\_\+blob(\+Blob blob)}{update_blob(Blob blob)}}]{\setlength{\rightskip}{0pt plus 5cm}void Tracked\+Blob\+::update\+\_\+blob (
+\begin{DoxyParamCaption}
+\item[{{\bf Blob}}]{blob}
+\end{DoxyParamCaption}
+)}\hypertarget{class_tracked_blob_a2159fb2f31b83d037c3fd7db3b3615e0}{}\label{class_tracked_blob_a2159fb2f31b83d037c3fd7db3b3615e0}
+Update the tracked blob Movements between the old and new blob states are recorded. The next predicted position of the next blob is also calculated for future calculations 
+\begin{DoxyParams}{Parameters}
+{\em blob} & New blob state used to update the tracked blob\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tracked\+Blob.\+h\item 
+Tracked\+Blob.\+cpp\end{DoxyCompactItemize}
